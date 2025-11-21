@@ -222,6 +222,24 @@ export interface Page {
         blockName?: string | null;
         blockType: 'heroBlock';
       }
+    | {
+        title: string;
+        features?:
+          | {
+              heading: string;
+              description: string;
+              icon: 'GitPullRequest' | 'SquareKanban' | 'RadioTower' | 'WandSparkles' | 'Layers' | 'BatteryCharging';
+              id?: string | null;
+            }[]
+          | null;
+        button: {
+          text: string;
+          url: string;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'featureBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1128,6 +1146,27 @@ export interface PagesSelect<T extends boolean = true> {
                     url?: T;
                   };
               image?: T;
+              id?: T;
+              blockName?: T;
+            };
+        featureBlock?:
+          | T
+          | {
+              title?: T;
+              features?:
+                | T
+                | {
+                    heading?: T;
+                    description?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              button?:
+                | T
+                | {
+                    text?: T;
+                    url?: T;
+                  };
               id?: T;
               blockName?: T;
             };

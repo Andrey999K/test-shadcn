@@ -12,8 +12,6 @@ export const HeroBlock: React.FC<HeroBlockProps> = (props) => {
     image
   } = props;
 
-  console.log("image", image);
-
   const imageProp = {
     src: image.url,
     alt: image.alt

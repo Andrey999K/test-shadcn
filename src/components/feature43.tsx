@@ -67,7 +67,7 @@ const Feature43 = ({
 }: Feature43Props) => {
   return (
     <section className="py-32">
-      <div className="container">
+      <div className="container mx-auto w-full max-w-6xl">
         {title && (
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <h2 className="text-pretty text-4xl font-medium lg:text-5xl">

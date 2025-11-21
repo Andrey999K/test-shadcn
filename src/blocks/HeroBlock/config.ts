@@ -6,6 +6,7 @@ export const HeroBlock: Block = {
     singular: 'Hero Block',
     plural: 'Hero Blocks',
   },
+  imageURL: "http://localhost:3000/api/media/file/HeroBlock.jpg",
   fields: [
     {
       name: 'title',

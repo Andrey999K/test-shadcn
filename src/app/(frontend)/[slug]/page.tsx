@@ -74,9 +74,6 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   const { hero, layout } = page
 
-  console.log("hero", hero);
-  console.log("layout", layout);
-
   return (
     <>
       <article className="pt-16 pb-24">
@@ -89,9 +86,7 @@ export default async function Page({ params: paramsPromise }: Args) {
         <RenderHero {...hero} />
         <RenderBlocks blocks={layout} />
       </article>
-      <main className="mx-auto flex flex-col w-full max-w-5xl items-center justify-between px-4">
-        <Hero47 />
-        <Feature43 />
+      <main className="mx-auto flex flex-col w-full max-w-6xl items-center justify-between px-4">
         <List2 />
         <Timeline9 />
         <Integration3 />
