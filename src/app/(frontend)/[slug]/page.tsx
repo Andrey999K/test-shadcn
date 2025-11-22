@@ -87,8 +87,6 @@ export default async function Page({ params: paramsPromise }: Args) {
         <RenderBlocks blocks={layout} />
       </article>
       <main className="mx-auto flex flex-col w-full max-w-6xl items-center justify-between px-4">
-        <List2 />
-        <Timeline9 />
         <Integration3 />
         <Team1 />
         <Pricing4 />

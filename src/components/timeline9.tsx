@@ -36,19 +36,32 @@ const timelineData: TimelineEntry[] = [
   },
 ];
 
-const Timeline9 = () => {
+type TimelineProps = {
+  title?: string,
+  data?: {
+    date: string,
+    title: string,
+    content: string,
+  }[]
+}
+
+const Timeline9 = ({
+                     title = "The History of Artificial Intelligence",
+  data = []
+}: TimelineProps) => {
+
   return (
     <section className="bg-background py-32">
       <div className="container">
         <h1 className="text-foreground mb-10 text-center text-3xl font-bold tracking-tighter sm:text-6xl">
-          The History of Artificial Intelligence
+          {title}
         </h1>
         <div className="relative mx-auto max-w-4xl">
           <Separator
             orientation="vertical"
             className="bg-muted absolute left-2 top-4"
           />
-          {timelineData.map((entry, index) => (
+          {data.map((entry, index) => (
             <div key={index} className="relative mb-10 pl-8">
               <div className="bg-foreground absolute left-0 top-3.5 flex size-4 items-center justify-center rounded-full" />
               <h4 className="rounded-xl py-2 text-xl font-bold tracking-tight xl:mb-4 xl:px-3">
