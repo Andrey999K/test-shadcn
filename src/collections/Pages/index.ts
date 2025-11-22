@@ -8,6 +8,8 @@ import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { HeroBlock } from "@/blocks/HeroBlock/config";
+import { FeatureBlock } from "@/blocks/FeatureBlock/config";
+import { ListBlock } from "@/blocks/ListBlock/config";
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -21,6 +23,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { TimelineBlock } from "@/blocks/TimelineBlock/Config";
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -73,7 +76,17 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, HeroBlock],
+              blocks: [
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                HeroBlock,
+                FeatureBlock,
+                ListBlock,
+                TimelineBlock
+              ],
               required: true,
               admin: {
                 initCollapsed: true,
