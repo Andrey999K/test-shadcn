@@ -240,6 +240,32 @@ export interface Page {
         blockName?: string | null;
         blockType: 'featureBlock';
       }
+    | {
+        heading: string;
+        items: {
+          title: string;
+          description: string;
+          category: 'Achievement' | 'Recognition' | 'Technology' | 'Service' | 'Management' | 'Environmental';
+          icon: 'Trophy' | 'Award' | 'Lightbulb' | 'HeartHandshake' | 'Building2' | 'Leaf';
+          link: string;
+          id?: string | null;
+        }[];
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'listBlock';
+      }
+    | {
+        title: string;
+        data: {
+          date: string;
+          title: string;
+          content: string;
+          id?: string | null;
+        }[];
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'timelineBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1166,6 +1192,38 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     text?: T;
                     url?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        listBlock?:
+          | T
+          | {
+              heading?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    category?: T;
+                    icon?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        timelineBlock?:
+          | T
+          | {
+              title?: T;
+              data?:
+                | T
+                | {
+                    date?: T;
+                    title?: T;
+                    content?: T;
+                    id?: T;
                   };
               id?: T;
               blockName?: T;
