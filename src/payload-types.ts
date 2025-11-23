@@ -205,41 +205,8 @@ export interface Page {
     | MediaBlock
     | ArchiveBlock
     | FormBlock
-    | {
-        title: string;
-        subTitle?: string | null;
-        description?: string | null;
-        primaryButton: {
-          text: string;
-          url: string;
-        };
-        secondaryButton: {
-          text: string;
-          url: string;
-        };
-        image: number | Media;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'heroBlock';
-      }
-    | {
-        title: string;
-        features?:
-          | {
-              heading: string;
-              description: string;
-              icon: 'GitPullRequest' | 'SquareKanban' | 'RadioTower' | 'WandSparkles' | 'Layers' | 'BatteryCharging';
-              id?: string | null;
-            }[]
-          | null;
-        button: {
-          text: string;
-          url: string;
-        };
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'featureBlock';
-      }
+    | HeroBlock
+    | FeatureBlock
     | {
         heading: string;
         items: {
@@ -847,6 +814,49 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeroBlock".
+ */
+export interface HeroBlock {
+  title: string;
+  subTitle?: string | null;
+  description?: string | null;
+  primaryButton: {
+    text: string;
+    url: string;
+  };
+  secondaryButton: {
+    text: string;
+    url: string;
+  };
+  image: number | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'heroBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FeatureBlock".
+ */
+export interface FeatureBlock {
+  title: string;
+  features?:
+    | {
+        heading: string;
+        description: string;
+        icon: 'GitPullRequest' | 'SquareKanban' | 'RadioTower' | 'WandSparkles' | 'Layers' | 'BatteryCharging';
+        id?: string | null;
+      }[]
+    | null;
+  button: {
+    text: string;
+    url: string;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'featureBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1153,49 +1163,8 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
-        heroBlock?:
-          | T
-          | {
-              title?: T;
-              subTitle?: T;
-              description?: T;
-              primaryButton?:
-                | T
-                | {
-                    text?: T;
-                    url?: T;
-                  };
-              secondaryButton?:
-                | T
-                | {
-                    text?: T;
-                    url?: T;
-                  };
-              image?: T;
-              id?: T;
-              blockName?: T;
-            };
-        featureBlock?:
-          | T
-          | {
-              title?: T;
-              features?:
-                | T
-                | {
-                    heading?: T;
-                    description?: T;
-                    icon?: T;
-                    id?: T;
-                  };
-              button?:
-                | T
-                | {
-                    text?: T;
-                    url?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+        heroBlock?: T | HeroBlockSelect<T>;
+        featureBlock?: T | FeatureBlockSelect<T>;
         listBlock?:
           | T
           | {
@@ -1324,6 +1293,53 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeroBlock_select".
+ */
+export interface HeroBlockSelect<T extends boolean = true> {
+  title?: T;
+  subTitle?: T;
+  description?: T;
+  primaryButton?:
+    | T
+    | {
+        text?: T;
+        url?: T;
+      };
+  secondaryButton?:
+    | T
+    | {
+        text?: T;
+        url?: T;
+      };
+  image?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FeatureBlock_select".
+ */
+export interface FeatureBlockSelect<T extends boolean = true> {
+  title?: T;
+  features?:
+    | T
+    | {
+        heading?: T;
+        description?: T;
+        icon?: T;
+        id?: T;
+      };
+  button?:
+    | T
+    | {
+        text?: T;
+        url?: T;
+      };
   id?: T;
   blockName?: T;
 }
