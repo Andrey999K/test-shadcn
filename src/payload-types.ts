@@ -208,18 +208,7 @@ export interface Page {
     | HeroBlock
     | FeatureBlock
     | ListBlock
-    | {
-        title: string;
-        data: {
-          date: string;
-          title: string;
-          content: string;
-          id?: string | null;
-        }[];
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'timelineBlock';
-      }
+    | TimelineBlock
   )[];
   meta?: {
     title?: string | null;
@@ -862,6 +851,22 @@ export interface ListBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimelineBlock".
+ */
+export interface TimelineBlock {
+  title: string;
+  data: {
+    date: string;
+    title: string;
+    content: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'timelineBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1171,21 +1176,7 @@ export interface PagesSelect<T extends boolean = true> {
         heroBlock?: T | HeroBlockSelect<T>;
         featureBlock?: T | FeatureBlockSelect<T>;
         listBlock?: T | ListBlockSelect<T>;
-        timelineBlock?:
-          | T
-          | {
-              title?: T;
-              data?:
-                | T
-                | {
-                    date?: T;
-                    title?: T;
-                    content?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+        timelineBlock?: T | TimelineBlockSelect<T>;
       };
   meta?:
     | T
@@ -1346,6 +1337,23 @@ export interface ListBlockSelect<T extends boolean = true> {
         category?: T;
         icon?: T;
         link?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimelineBlock_select".
+ */
+export interface TimelineBlockSelect<T extends boolean = true> {
+  title?: T;
+  data?:
+    | T
+    | {
+        date?: T;
+        title?: T;
+        content?: T;
         id?: T;
       };
   id?: T;
