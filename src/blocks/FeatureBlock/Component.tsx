@@ -21,7 +21,7 @@ const iconMap: Record<string, IconComponent> = {
 
 export const FeatureBlock: React.FC<FeatureBlockProps> = (props) => {
 
-  const { title, features, buttonText, buttonUrl } = props;
+  const { title, features, button } = props;
 
   // Преобразуем features из Payload в формат, ожидаемый Feature43
   const featuresForComponent = features?.map(feature => ({
@@ -37,8 +37,8 @@ export const FeatureBlock: React.FC<FeatureBlockProps> = (props) => {
     // Передаем buttonText и buttonUrl как отдельные пропсы, если Feature43 их принимает
     // или объединим в объект buttons, если там такая структура
     // Пример, если Feature43 принимает buttonText и buttonUrl напрямую:
-    buttonText: buttonText,
-    buttonUrl: buttonUrl,
+    buttonText: button.text,
+    buttonUrl: button.url,
     // Если Feature43 ожидает объект buttons: { text, url }, используй:
     // buttons: buttonText && buttonUrl ? { text: buttonText, url: buttonUrl } : undefined
   };

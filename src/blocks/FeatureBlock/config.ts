@@ -117,4 +117,5 @@ export const FeatureBlock: Block = {
     //   required: true,
     // }
   ],
+  interfaceName: "FeatureBlock"
 };

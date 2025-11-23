@@ -41,4 +41,5 @@ export const TimelineBlock: Block = {
       ]
     }
   ],
+  interfaceName: "TimelineBlock"
 };

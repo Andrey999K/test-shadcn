@@ -1,6 +1,4 @@
 import { Block } from 'payload';
-import { Trophy } from "lucide-react";
-import React from "react";
 
 export const ListBlock: Block = {
   slug: 'listBlock', // <-- Уникальный слаг для блока
@@ -67,66 +65,7 @@ export const ListBlock: Block = {
           label: "Ссылка элемента"
         }
       ]
-    }
-    // {
-    //   name: 'title',
-    //   type: 'text',
-    //   required: true,
-    //   label: 'Заголовок',
-    // },
-    // {
-    //   name: 'subTitle',
-    //   type: 'textarea',
-    //   label: 'Подзаголовок',
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Описание',
-    // },
-    // {
-    //   name: 'primaryButton', // <-- Название группы для первой кнопки
-    //   type: 'group', // <-- Используем group
-    //   label: 'Основная кнопка',
-    //   fields: [
-    //     {
-    //       name: 'text',
-    //       type: 'text',
-    //       required: true, // Сделай текст обязательным для кнопки
-    //       label: 'Текст кнопки',
-    //     },
-    //     {
-    //       name: 'url',
-    //       type: 'text', // Или 'url', если хочешь валидацию URL
-    //       required: true, // Сделай URL обязательным для кнопки
-    //       label: 'Ссылка',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'secondaryButton', // <-- Название группы для второй кнопки
-    //   type: 'group', // <-- Используем group
-    //   label: 'Второстепенная кнопка',
-    //   fields: [
-    //     {
-    //       name: 'text',
-    //       type: 'text',
-    //       required: true, // Сделай текст обязательным для кнопки
-    //       label: 'Текст кнопки',
-    //     },
-    //     {
-    //       name: 'url',
-    //       type: 'text', // Или 'url', если хочешь валидацию URL
-    //       required: true, // Сделай URL обязательным для кнопки
-    //       label: 'Ссылка',
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   relationTo: 'media',
-    //   required: true,
-    // }
+    },
   ],
+  interfaceName: "ListBlock"
 };

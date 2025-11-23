@@ -69,4 +69,5 @@ export const HeroBlock: Block = {
       required: true,
     }
   ],
+  interfaceName: "HeroBlock"
 };
