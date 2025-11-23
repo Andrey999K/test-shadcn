@@ -207,20 +207,7 @@ export interface Page {
     | FormBlock
     | HeroBlock
     | FeatureBlock
-    | {
-        heading: string;
-        items: {
-          title: string;
-          description: string;
-          category: 'Achievement' | 'Recognition' | 'Technology' | 'Service' | 'Management' | 'Environmental';
-          icon: 'Trophy' | 'Award' | 'Lightbulb' | 'HeartHandshake' | 'Building2' | 'Leaf';
-          link: string;
-          id?: string | null;
-        }[];
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'listBlock';
-      }
+    | ListBlock
     | {
         title: string;
         data: {
@@ -857,6 +844,24 @@ export interface FeatureBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListBlock".
+ */
+export interface ListBlock {
+  heading: string;
+  items: {
+    title: string;
+    description: string;
+    category: 'Achievement' | 'Recognition' | 'Technology' | 'Service' | 'Management' | 'Environmental';
+    icon: 'Trophy' | 'Award' | 'Lightbulb' | 'HeartHandshake' | 'Building2' | 'Leaf';
+    link: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'listBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1165,23 +1170,7 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         heroBlock?: T | HeroBlockSelect<T>;
         featureBlock?: T | FeatureBlockSelect<T>;
-        listBlock?:
-          | T
-          | {
-              heading?: T;
-              items?:
-                | T
-                | {
-                    title?: T;
-                    description?: T;
-                    category?: T;
-                    icon?: T;
-                    link?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
+        listBlock?: T | ListBlockSelect<T>;
         timelineBlock?:
           | T
           | {
@@ -1339,6 +1328,25 @@ export interface FeatureBlockSelect<T extends boolean = true> {
     | {
         text?: T;
         url?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListBlock_select".
+ */
+export interface ListBlockSelect<T extends boolean = true> {
+  heading?: T;
+  items?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        category?: T;
+        icon?: T;
+        link?: T;
+        id?: T;
       };
   id?: T;
   blockName?: T;
