@@ -12,10 +12,19 @@ export const HeroBlock: React.FC<HeroBlockProps> = (props) => {
     image
   } = props;
 
-  const imageProp = {
-    src: image.url,
-    alt: image.alt
-  };
+  let imageProp: { src: string; alt: string } | undefined = undefined;
+
+  if (image) {
+    if (typeof image === 'object') {
+      imageProp = {
+        src: image.url || '',
+        alt: image.alt || ''
+      };
+    } else {
+        console.warn(`Image field is an ID (${image}). Expected a populated Media object. Check your data fetching logic in page.tsx.`);
+        imageProp = undefined;
+    }
+  }
 
   // Подготовим объект buttons в нужном формате для Hero47
   const buttonsForHero47 = {
@@ -35,8 +44,8 @@ export const HeroBlock: React.FC<HeroBlockProps> = (props) => {
   return (
     <Hero47
       heading={title}
-      subheading={subTitle}
-      description={description}
+      subheading={subTitle || ""}
+      description={description || ""}
       buttons={buttonsProp}
       image={imageProp}
     />
