@@ -76,7 +76,7 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          <Image src={image.src} alt={image.alt} className="max-h-96 w-full rounded-md object-cover" />
+          <Image src={image.src} alt={image.alt} className="max-h-96 w-full rounded-md object-cover" fill />
         </div>
       </div>
     </section>

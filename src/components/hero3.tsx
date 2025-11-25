@@ -123,6 +123,7 @@ const Hero3 = ({
             src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
             alt="placeholder hero"
             className="max-h-96 w-full rounded-md object-cover"
+            fill
           />
         </div>
       </div>
