@@ -47,7 +47,7 @@ type TimelineProps = {
 
 const Timeline9 = ({
                      title = "The History of Artificial Intelligence",
-  data = []
+  data = timelineData
 }: TimelineProps) => {
 
   return (

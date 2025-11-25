@@ -12,14 +12,9 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
-import { Hero47 } from "@/components/hero47";
-import { Feature43 } from "@/components/feature43";
-import { List2 } from "@/components/list2";
-import { Timeline9 } from "@/components/timeline9";
 import { Integration3 } from "@/components/integration3";
 import { Team1 } from "@/components/team1";
 import { Pricing4 } from "@/components/pricing4";
-import { Footer2 } from "@/components/footer2";
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
