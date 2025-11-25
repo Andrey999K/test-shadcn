@@ -76,6 +76,7 @@ const Hero47 = ({
                 src={image.src}
                 alt={image.alt}
                 className="size-full object-cover object-[50%_0%]"
+                fill
               />
             </div>
             <Image
