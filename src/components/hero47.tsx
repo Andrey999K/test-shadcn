@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface Hero47Props {
   heading?: string;
@@ -71,18 +72,18 @@ const Hero47 = ({
           <div className="relative z-10">
             <div
               className="left-1/2! h-[92%]! w-[69%]! absolute top-2.5 -translate-x-[52%] overflow-hidden rounded-[35px]">
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
                 className="size-full object-cover object-[50%_0%]"
               />
             </div>
-            <img
-              className="relative z-10"
+            <Image
               src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/mockups/phone-2.png"
+              alt="iphone"
+              className="relative z-10"
               width={450}
               height={889}
-              alt="iphone"
             />
           </div>
         </div>

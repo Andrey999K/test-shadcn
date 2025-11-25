@@ -27,11 +27,11 @@ const THEMES = [
 export function ThemeSelector() {
   const { setTheme, theme } = useTheme();
 
-  const toggleTheme = () => {
-    const currentIndex = THEMES.findIndex(t => t.name === theme);
-    const nextIndex = (currentIndex + 1) % THEMES.length;
-    setTheme(THEMES[nextIndex].name);
-  };
+  // const toggleTheme = () => {
+  //   const currentIndex = THEMES.findIndex(t => t.name === theme);
+  //   const nextIndex = (currentIndex + 1) % THEMES.length;
+  //   setTheme(THEMES[nextIndex].name);
+  // };
 
   // Или используем DropdownMenu для выбора
   return (

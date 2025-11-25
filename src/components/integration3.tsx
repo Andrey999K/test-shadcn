@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const DATA = [
   {
@@ -62,12 +63,12 @@ const Integration3 = () => {
             {DATA.map(({ id, icon, title, description }) => (
               <div key={id} className="flex items-center gap-4 py-4">
                 <div className="h-12 w-12 flex-shrink-0">
-                  <img
+                  <Image
                     src={icon}
                     alt={title}
+                    className="h-full w-full object-contain"
                     width={48}
                     height={48}
-                    className="h-full w-full object-contain"
                   />
                 </div>
                 <div className="text-left">

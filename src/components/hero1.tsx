@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface Hero1Props {
   badge?: string;
@@ -75,11 +76,7 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="max-h-96 w-full rounded-md object-cover"
-          />
+          <Image src={image.src} alt={image.alt} className="max-h-96 w-full rounded-md object-cover" />
         </div>
       </div>
     </section>
